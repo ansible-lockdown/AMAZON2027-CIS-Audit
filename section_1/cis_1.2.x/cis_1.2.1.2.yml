@@ -1,0 +1,62 @@
+---
+
+{{ if .Vars.amzn2027cis_level_1 }}
+  {{ if .Vars.amzn2027cis_rule_1_2_1_2 }}
+command:
+  gpgcheck_dnf_effective:
+    title: 1.2.1.2 | Ensure gpgcheck is configured | global effective dnf configuration
+    exec: dnf --dump-main-config 2>/dev/null | grep -Pi -- '^\h*pkg_gpgcheck\h*='
+    exit-status: 0
+    stdout:
+    - '/(?i)^\s*pkg_gpgcheck\s*=\s*(1|true|yes)\s*$/'
+    - '!/(?i)^\s*pkg_gpgcheck\s*=\s*(0|false|no)\b/'
+    timeout: {{ .Vars.timeout_ms }}
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.2.1.2
+      CISv8:
+      - 7.3
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+      NIST800-53R5: SI-2
+  gpgcheck_repo_effective:
+    title: 1.2.1.2 | Ensure gpgcheck is configured | no repository disables gpgcheck in effective configuration
+    exec: echo "gpgcheck_disabled_repos=$(dnf --dump-repo-config='*' 2>/dev/null | grep -Pic -- '^\h*pkg_gpgcheck\h*=\h*(0|false|no)\b')"
+    exit-status: 0
+    stdout:
+    - '/^gpgcheck_disabled_repos=0$/'
+    timeout: {{ .Vars.timeout_ms }}
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.2.1.2
+      CISv8:
+      - 7.3
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+      NIST800-53R5: SI-2
+  gpg_check_repo:
+    title: 1.2.1.2 | Ensure gpgcheck is configured | no repository disables gpgcheck
+    exit-status: 0
+    exec: echo "gpgcheck_disabled_repos=$(grep -Pris -- '^\h*(pkg_)?gpgcheck\h*=\h*(0|false|no)\b' /etc/yum.repos.d /etc/yum/repos.d /etc/distro.repos.d /etc/dnf/repos.override.d 2>/dev/null | wc -l)"
+    stdout:
+    - '/^gpgcheck_disabled_repos=0$/'
+    timeout: {{ .Vars.timeout_ms }}
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 1.2.1.2
+      CISv8:
+      - 7.3
+      CISv8_IG1: true
+      CISv8_IG2: true
+      CISv8_IG3: true
+      NIST800-53R5: SI-2
+  {{ end }}
+{{ end }}

@@ -1,0 +1,612 @@
+---
+
+## metadata for benchmark
+
+## metadata for Audit benchmark
+benchmark_version: '0.0.1'
+
+# If run via script this is discovered and set
+host_os_distribution: Amazon
+
+
+#  timeout for each command to run where set - default = 10seconds/10000ms
+timeout_ms: 120000
+
+# Taken from LE rhel9-cis
+amzn2027cis_section1: true
+amzn2027cis_section2: true
+amzn2027cis_section3: true
+amzn2027cis_section4: true
+amzn2027cis_section5: true
+amzn2027cis_section6: true
+amzn2027cis_section7: true
+
+amzn2027cis_level_1: true
+amzn2027cis_level_2: true
+
+amzn2027cis_selinux_disable: false
+
+#  to enable rules that may have IO impact on a system e.g. full filesystem scans or CPU heavy
+run_heavy_tests: true
+
+#  True is BIOS based system else set to false
+amzn2027cis_legacy_boot: false
+
+amzn2027cis_set_boot_pass: false
+
+# Section 1 - Initial Setup
+## 1.1.1 Filesystem kernel modules
+amzn2027cis_rule_1_1_1_1: true
+amzn2027cis_rule_1_1_1_2: true
+amzn2027cis_rule_1_1_1_3: true
+amzn2027cis_rule_1_1_1_4: true
+amzn2027cis_rule_1_1_1_5: true
+## 1.1.2.1 /tmp
+amzn2027cis_rule_1_1_2_1_1: true
+amzn2027cis_rule_1_1_2_1_2: true
+amzn2027cis_rule_1_1_2_1_3: true
+amzn2027cis_rule_1_1_2_1_4: true
+## 1.1.2.2 /dev/shm
+amzn2027cis_rule_1_1_2_2_1: true
+amzn2027cis_rule_1_1_2_2_2: true
+amzn2027cis_rule_1_1_2_2_3: true
+amzn2027cis_rule_1_1_2_2_4: true
+## 1.1.2.3 /home
+amzn2027cis_rule_1_1_2_3_1: true
+amzn2027cis_rule_1_1_2_3_2: true
+amzn2027cis_rule_1_1_2_3_3: true
+## 1.1.2.4 /var
+amzn2027cis_rule_1_1_2_4_1: true
+amzn2027cis_rule_1_1_2_4_2: true
+amzn2027cis_rule_1_1_2_4_3: true
+## 1.1.2.5 /var/tmp
+amzn2027cis_rule_1_1_2_5_1: true
+amzn2027cis_rule_1_1_2_5_2: true
+amzn2027cis_rule_1_1_2_5_3: true
+amzn2027cis_rule_1_1_2_5_4: true
+## 1.1.2.6 /var/log
+amzn2027cis_rule_1_1_2_6_1: true
+amzn2027cis_rule_1_1_2_6_2: true
+amzn2027cis_rule_1_1_2_6_3: true
+amzn2027cis_rule_1_1_2_6_4: true
+## 1.1.2.7 /var/log/audit
+amzn2027cis_rule_1_1_2_7_1: true
+amzn2027cis_rule_1_1_2_7_2: true
+amzn2027cis_rule_1_1_2_7_3: true
+amzn2027cis_rule_1_1_2_7_4: true
+## 1.2.1 Package management
+amzn2027cis_rule_1_2_1_1: true
+amzn2027cis_rule_1_2_1_2: true
+amzn2027cis_rule_1_2_1_3: true
+amzn2027cis_rule_1_2_1_4: true
+amzn2027cis_rule_1_2_1_5: true
+## 1.2.2 Package updates
+amzn2027cis_rule_1_2_2_1: true
+## 1.3.1 SELinux
+amzn2027cis_rule_1_3_1_1: true
+amzn2027cis_rule_1_3_1_2: true
+amzn2027cis_rule_1_3_1_3: true
+amzn2027cis_rule_1_3_1_4: true
+amzn2027cis_rule_1_3_1_5: true
+amzn2027cis_rule_1_3_1_6: true
+amzn2027cis_rule_1_3_1_7: true
+amzn2027cis_rule_1_3_1_8: true
+## 1.4 Bootloader
+amzn2027cis_rule_1_4_1: true
+amzn2027cis_rule_1_4_2: true
+amzn2027cis_rule_1_4_3: true
+amzn2027cis_rule_1_4_4: true
+amzn2027cis_rule_1_4_5: true
+## 1.5 Additional process hardening
+amzn2027cis_rule_1_5_1: true
+amzn2027cis_rule_1_5_2: true
+amzn2027cis_rule_1_5_3: true
+amzn2027cis_rule_1_5_4: true
+amzn2027cis_rule_1_5_5: true
+amzn2027cis_rule_1_5_6: true
+amzn2027cis_rule_1_5_7: true
+amzn2027cis_rule_1_5_8: true
+amzn2027cis_rule_1_5_9: true
+amzn2027cis_rule_1_5_10: true
+## 1.6 System wide crypto policy
+amzn2027cis_rule_1_6_1: true
+amzn2027cis_rule_1_6_2: true
+amzn2027cis_rule_1_6_3: true
+amzn2027cis_rule_1_6_4: true
+amzn2027cis_rule_1_6_5: true
+amzn2027cis_rule_1_6_6: true
+amzn2027cis_rule_1_6_7: true
+## 1.7 Command line warning banners
+amzn2027cis_rule_1_7_1: true
+amzn2027cis_rule_1_7_2: true
+amzn2027cis_rule_1_7_3: true
+amzn2027cis_rule_1_7_4: true
+amzn2027cis_rule_1_7_5: true
+amzn2027cis_rule_1_7_6: true
+## 1.8 GNOME Display Manager
+amzn2027cis_rule_1_8_1: true
+amzn2027cis_rule_1_8_2: true
+amzn2027cis_rule_1_8_3: true
+amzn2027cis_rule_1_8_4: true
+amzn2027cis_rule_1_8_5: true
+amzn2027cis_rule_1_8_6: true
+amzn2027cis_rule_1_8_7: true
+
+# Section 2 - Services
+## 2.1 Server services
+amzn2027cis_rule_2_1_1: true
+amzn2027cis_rule_2_1_2: true
+amzn2027cis_rule_2_1_3: true
+amzn2027cis_rule_2_1_4: true
+amzn2027cis_rule_2_1_5: true
+amzn2027cis_rule_2_1_6: true
+amzn2027cis_rule_2_1_7: true
+amzn2027cis_rule_2_1_8: true
+amzn2027cis_rule_2_1_9: true
+amzn2027cis_rule_2_1_10: true
+amzn2027cis_rule_2_1_11: true
+amzn2027cis_rule_2_1_12: true
+amzn2027cis_rule_2_1_13: true
+amzn2027cis_rule_2_1_14: true
+amzn2027cis_rule_2_1_15: true
+amzn2027cis_rule_2_1_16: true
+amzn2027cis_rule_2_1_17: true
+amzn2027cis_rule_2_1_18: true
+amzn2027cis_rule_2_1_19: true
+amzn2027cis_rule_2_1_20: true
+amzn2027cis_rule_2_1_21: true
+## 2.2 Client services
+amzn2027cis_rule_2_2_1: true
+amzn2027cis_rule_2_2_2: true
+amzn2027cis_rule_2_2_3: true
+amzn2027cis_rule_2_2_4: true
+## 2.3 Time synchronization
+amzn2027cis_rule_2_3_1: true
+amzn2027cis_rule_2_3_2: true
+amzn2027cis_rule_2_3_3: true
+## 2.4.1 cron
+amzn2027cis_rule_2_4_1_1: true
+amzn2027cis_rule_2_4_1_2: true
+amzn2027cis_rule_2_4_1_3: true
+amzn2027cis_rule_2_4_1_4: true
+amzn2027cis_rule_2_4_1_5: true
+amzn2027cis_rule_2_4_1_6: true
+amzn2027cis_rule_2_4_1_7: true
+amzn2027cis_rule_2_4_1_8: true
+amzn2027cis_rule_2_4_1_9: true
+## 2.4.2 at
+amzn2027cis_rule_2_4_2_1: true
+
+# Section 3 - Network
+## 3.1 Network devices
+amzn2027cis_rule_3_1_1: true
+amzn2027cis_rule_3_1_2: true
+## 3.2 Network kernel modules
+amzn2027cis_rule_3_2_1: true
+amzn2027cis_rule_3_2_2: true
+amzn2027cis_rule_3_2_3: true
+## 3.3.1 IPv4 kernel parameters
+amzn2027cis_rule_3_3_1_1: true
+amzn2027cis_rule_3_3_1_2: true
+amzn2027cis_rule_3_3_1_3: true
+amzn2027cis_rule_3_3_1_4: true
+amzn2027cis_rule_3_3_1_5: true
+amzn2027cis_rule_3_3_1_6: true
+amzn2027cis_rule_3_3_1_7: true
+amzn2027cis_rule_3_3_1_8: true
+amzn2027cis_rule_3_3_1_9: true
+amzn2027cis_rule_3_3_1_10: true
+amzn2027cis_rule_3_3_1_11: true
+amzn2027cis_rule_3_3_1_12: true
+amzn2027cis_rule_3_3_1_13: true
+amzn2027cis_rule_3_3_1_14: true
+amzn2027cis_rule_3_3_1_15: true
+amzn2027cis_rule_3_3_1_16: true
+amzn2027cis_rule_3_3_1_17: true
+amzn2027cis_rule_3_3_1_18: true
+amzn2027cis_rule_3_3_1_19: true
+amzn2027cis_rule_3_3_1_20: true
+amzn2027cis_rule_3_3_2_1: true
+## 3.3.2 IPv6 kernel parameters
+amzn2027cis_rule_3_3_2_2: true
+amzn2027cis_rule_3_3_2_3: true
+amzn2027cis_rule_3_3_2_4: true
+amzn2027cis_rule_3_3_2_5: true
+amzn2027cis_rule_3_3_2_6: true
+amzn2027cis_rule_3_3_2_7: true
+amzn2027cis_rule_3_3_2_8: true
+amzn2027cis_rule_3_3_2_9: true
+
+# Section 4 - Host based firewall
+## 4.1 firewalld
+amzn2027cis_rule_4_1_1: true
+amzn2027cis_rule_4_1_2: true
+amzn2027cis_rule_4_1_3: true
+amzn2027cis_rule_4_1_4: true
+amzn2027cis_rule_4_1_5: true
+amzn2027cis_rule_4_1_6: true
+amzn2027cis_rule_4_1_7: true
+amzn2027cis_rule_4_1_8: true
+amzn2027cis_rule_4_1_9: true
+amzn2027cis_rule_4_1_10: true
+amzn2027cis_rule_4_1_11: true
+
+# Section 5 - Access, authentication and authorization
+## 5.1 SSH server
+amzn2027cis_rule_5_1_1: true
+amzn2027cis_rule_5_1_2: true
+amzn2027cis_rule_5_1_3: true
+amzn2027cis_rule_5_1_4: true
+amzn2027cis_rule_5_1_5: true
+amzn2027cis_rule_5_1_6: true
+amzn2027cis_rule_5_1_7: true
+amzn2027cis_rule_5_1_8: true
+amzn2027cis_rule_5_1_9: true
+amzn2027cis_rule_5_1_10: true
+amzn2027cis_rule_5_1_11: true
+amzn2027cis_rule_5_1_12: true
+amzn2027cis_rule_5_1_13: true
+amzn2027cis_rule_5_1_14: true
+amzn2027cis_rule_5_1_15: true
+amzn2027cis_rule_5_1_16: true
+amzn2027cis_rule_5_1_17: true
+amzn2027cis_rule_5_1_18: true
+amzn2027cis_rule_5_1_19: true
+amzn2027cis_rule_5_1_20: true
+amzn2027cis_rule_5_1_21: true
+amzn2027cis_rule_5_1_22: true
+amzn2027cis_rule_5_1_23: true
+## 5.2 Privilege escalation
+amzn2027cis_rule_5_2_1: true
+amzn2027cis_rule_5_2_2: true
+amzn2027cis_rule_5_2_3: true
+amzn2027cis_rule_5_2_4: true
+amzn2027cis_rule_5_2_5: true
+amzn2027cis_rule_5_2_6: true
+amzn2027cis_rule_5_2_7: true
+amzn2027cis_rule_5_2_8: true
+amzn2027cis_rule_5_2_9: true
+amzn2027cis_rule_5_2_10: true
+amzn2027cis_rule_5_2_11: true
+amzn2027cis_rule_5_2_12: true
+## 5.3.1 PAM software packages
+amzn2027cis_rule_5_3_1_1: true
+amzn2027cis_rule_5_3_1_2: true
+amzn2027cis_rule_5_3_1_3: true
+## 5.3.2 authselect
+amzn2027cis_rule_5_3_2_1: true
+amzn2027cis_rule_5_3_2_2: true
+amzn2027cis_rule_5_3_2_3: true
+amzn2027cis_rule_5_3_2_4: true
+amzn2027cis_rule_5_3_2_5: true
+## 5.3.3.1 pam_faillock
+amzn2027cis_rule_5_3_3_1_1: true
+amzn2027cis_rule_5_3_3_1_2: true
+amzn2027cis_rule_5_3_3_1_3: true
+## 5.3.3.2 pam_pwquality
+amzn2027cis_rule_5_3_3_2_1: true
+amzn2027cis_rule_5_3_3_2_2: true
+amzn2027cis_rule_5_3_3_2_3: true
+amzn2027cis_rule_5_3_3_2_4: true
+amzn2027cis_rule_5_3_3_2_5: true
+amzn2027cis_rule_5_3_3_2_6: true
+amzn2027cis_rule_5_3_3_2_7: true
+## 5.3.3.3 pam_pwhistory
+amzn2027cis_rule_5_3_3_3_1: true
+amzn2027cis_rule_5_3_3_3_2: true
+amzn2027cis_rule_5_3_3_3_3: true
+## 5.3.3.4 pam_unix
+amzn2027cis_rule_5_3_3_4_1: true
+amzn2027cis_rule_5_3_3_4_2: true
+amzn2027cis_rule_5_3_3_4_3: true
+amzn2027cis_rule_5_3_3_4_4: true
+## 5.4.1 Shadow password suite
+amzn2027cis_rule_5_4_1_1: true
+amzn2027cis_rule_5_4_1_2: true
+amzn2027cis_rule_5_4_1_3: true
+amzn2027cis_rule_5_4_1_4: true
+amzn2027cis_rule_5_4_1_5: true
+amzn2027cis_rule_5_4_1_6: true
+## 5.4.2 root and system accounts
+amzn2027cis_rule_5_4_2_1: true
+amzn2027cis_rule_5_4_2_2: true
+amzn2027cis_rule_5_4_2_3: true
+amzn2027cis_rule_5_4_2_4: true
+amzn2027cis_rule_5_4_2_5: true
+amzn2027cis_rule_5_4_2_6: true
+amzn2027cis_rule_5_4_2_7: true
+amzn2027cis_rule_5_4_2_8: true
+## 5.4.3 User default environment
+amzn2027cis_rule_5_4_3_1: true
+amzn2027cis_rule_5_4_3_2: true
+amzn2027cis_rule_5_4_3_3: true
+amzn2027cis_rule_5_4_3_4: true
+
+# Section 6 - Logging and auditing
+## 6.1.1 journald
+amzn2027cis_rule_6_1_1_1: true
+amzn2027cis_rule_6_1_1_2: true
+amzn2027cis_rule_6_1_1_3: true
+amzn2027cis_rule_6_1_1_4: true
+amzn2027cis_rule_6_1_1_5: true
+## 6.1.2 rsyslog
+amzn2027cis_rule_6_1_2_1: true
+amzn2027cis_rule_6_1_2_2: true
+amzn2027cis_rule_6_1_2_3: true
+amzn2027cis_rule_6_1_2_4: true
+amzn2027cis_rule_6_1_2_5: true
+amzn2027cis_rule_6_1_2_6: true
+amzn2027cis_rule_6_1_2_7: true
+amzn2027cis_rule_6_1_2_8: true
+amzn2027cis_rule_6_1_2_9: true
+amzn2027cis_rule_6_1_2_10: true
+amzn2027cis_rule_6_1_2_11: true
+amzn2027cis_rule_6_1_2_12: true
+amzn2027cis_rule_6_1_2_13: true
+amzn2027cis_rule_6_1_2_14: true
+## 6.1.3 Logfiles
+amzn2027cis_rule_6_1_3_1: true
+## 6.2.1 auditd service
+amzn2027cis_rule_6_2_1_1: true
+amzn2027cis_rule_6_2_1_2: true
+amzn2027cis_rule_6_2_1_3: true
+amzn2027cis_rule_6_2_1_4: true
+## 6.2.2 Data retention
+amzn2027cis_rule_6_2_2_1: true
+amzn2027cis_rule_6_2_2_2: true
+amzn2027cis_rule_6_2_2_3: true
+amzn2027cis_rule_6_2_2_4: true
+## 6.2.3 auditd rules
+amzn2027cis_rule_6_2_3_1: true
+amzn2027cis_rule_6_2_3_2: true
+amzn2027cis_rule_6_2_3_3: true
+amzn2027cis_rule_6_2_3_4: true
+amzn2027cis_rule_6_2_3_5: true
+amzn2027cis_rule_6_2_3_6: true
+amzn2027cis_rule_6_2_3_7: true
+amzn2027cis_rule_6_2_3_8: true
+amzn2027cis_rule_6_2_3_9: true
+amzn2027cis_rule_6_2_3_10: true
+amzn2027cis_rule_6_2_3_11: true
+amzn2027cis_rule_6_2_3_12: true
+amzn2027cis_rule_6_2_3_13: true
+amzn2027cis_rule_6_2_3_14: true
+amzn2027cis_rule_6_2_3_15: true
+amzn2027cis_rule_6_2_3_16: true
+amzn2027cis_rule_6_2_3_17: true
+amzn2027cis_rule_6_2_3_18: true
+amzn2027cis_rule_6_2_3_19: true
+amzn2027cis_rule_6_2_3_20: true
+amzn2027cis_rule_6_2_3_21: true
+amzn2027cis_rule_6_2_3_22: true
+amzn2027cis_rule_6_2_3_23: true
+amzn2027cis_rule_6_2_3_24: true
+amzn2027cis_rule_6_2_3_25: true
+amzn2027cis_rule_6_2_3_26: true
+amzn2027cis_rule_6_2_3_27: true
+amzn2027cis_rule_6_2_3_28: true
+amzn2027cis_rule_6_2_3_29: true
+amzn2027cis_rule_6_2_3_30: true
+amzn2027cis_rule_6_2_3_31: true
+amzn2027cis_rule_6_2_3_32: true
+amzn2027cis_rule_6_2_3_33: true
+amzn2027cis_rule_6_2_3_34: true
+amzn2027cis_rule_6_2_3_35: true
+amzn2027cis_rule_6_2_3_36: true
+amzn2027cis_rule_6_2_3_37: true
+## 6.2.4 auditd file access
+amzn2027cis_rule_6_2_4_1: true
+amzn2027cis_rule_6_2_4_2: true
+amzn2027cis_rule_6_2_4_3: true
+amzn2027cis_rule_6_2_4_4: true
+amzn2027cis_rule_6_2_4_5: true
+amzn2027cis_rule_6_2_4_6: true
+amzn2027cis_rule_6_2_4_7: true
+amzn2027cis_rule_6_2_4_8: true
+amzn2027cis_rule_6_2_4_9: true
+amzn2027cis_rule_6_2_4_10: true
+## 6.3 Integrity checking (AIDE)
+amzn2027cis_rule_6_3_1: true
+amzn2027cis_rule_6_3_2: true
+amzn2027cis_rule_6_3_3: true
+amzn2027cis_rule_6_3_4: true
+
+# Section 7 - System maintenance
+## 7.1 System file permissions
+amzn2027cis_rule_7_1_1: true
+amzn2027cis_rule_7_1_2: true
+amzn2027cis_rule_7_1_3: true
+amzn2027cis_rule_7_1_4: true
+amzn2027cis_rule_7_1_5: true
+amzn2027cis_rule_7_1_6: true
+amzn2027cis_rule_7_1_7: true
+amzn2027cis_rule_7_1_8: true
+amzn2027cis_rule_7_1_9: true
+amzn2027cis_rule_7_1_10: true
+amzn2027cis_rule_7_1_11: true
+amzn2027cis_rule_7_1_12: true
+amzn2027cis_rule_7_1_13: true
+## 7.2 Local user and group settings
+amzn2027cis_rule_7_2_1: true
+amzn2027cis_rule_7_2_2: true
+amzn2027cis_rule_7_2_3: true
+amzn2027cis_rule_7_2_4: true
+amzn2027cis_rule_7_2_5: true
+amzn2027cis_rule_7_2_6: true
+amzn2027cis_rule_7_2_7: true
+amzn2027cis_rule_7_2_8: true
+amzn2027cis_rule_7_2_9: true
+
+amzn2027cis_enable_repogpg: false
+
+############
+
+## Remediation gates the audit follows - a control the role is told not to change is reported SKIPPED
+amzn2027cis_disruption_high: false
+amzn2027cis_allow_authselect_updates: true
+amzn2027cis_authselect_pkg_update: false
+amzn2027cis_crypto_policy_ansiblemanaged: true
+amzn2027cis_selinux_enforce: enforcing
+amzn2027cis_config_aide: true
+amzn2027cis_force_user_maxdays: false
+amzn2027cis_force_user_mindays: false
+amzn2027cis_system_users_shell: []
+
+# Section 1
+
+# Whether or not to run tasks related to auditing/patching the desktop environment
+amzn2027cis_gui: false
+
+# Warning Banner Content (issue, issue.net, motd)
+amzn2027cis_warning_banner: Authorized users only. All activity may be monitored and reported.
+# End Banner
+
+# 1.8 Gnome Desktop
+amzn2027cis_dconf_db_name: local
+
+# Section 2
+# Service configuration
+# Options are
+# Service
+# - false - removes package
+# - true - leaves package installed
+# Mask
+# - false - leaves service in current status
+# - true - sets service name to masked
+amzn2027cis_autofs_services: false
+amzn2027cis_autofs_mask: false
+amzn2027cis_avahi_server: false
+amzn2027cis_avahi_mask: false
+amzn2027cis_dns_server: false
+amzn2027cis_dns_mask: false
+amzn2027cis_dnsmasq_server: false
+amzn2027cis_dnsmasq_mask: false
+amzn2027cis_samba_server: false
+amzn2027cis_samba_mask: false
+amzn2027cis_ftp_server: false
+amzn2027cis_ftp_mask: false
+amzn2027cis_message_server: false  # This is for messaging dovecot and cyrus-imap
+amzn2027cis_message_mask: false
+amzn2027cis_nfs_server: true
+amzn2027cis_nfs_mask: true
+amzn2027cis_print_server: false  # replaces cups
+amzn2027cis_print_mask: false
+amzn2027cis_rpc_server: true
+amzn2027cis_rpc_mask: true
+amzn2027cis_rsync_server: false
+amzn2027cis_rsync_mask: false
+amzn2027cis_snmp_server: false
+amzn2027cis_snmp_mask: false
+amzn2027cis_telnet_server: false
+amzn2027cis_telnet_mask: false
+amzn2027cis_tftp_server: false
+amzn2027cis_tftp_mask: false
+amzn2027cis_squid_server: false
+amzn2027cis_squid_mask: false
+amzn2027cis_httpd_server: false
+amzn2027cis_httpd_mask: false
+amzn2027cis_nginx_server: false
+amzn2027cis_nginx_mask: false
+amzn2027cis_xwindow_server: false  # will remove mask not an option
+amzn2027cis_is_mail_server: false
+
+## Section 2.3 Service clients
+
+amzn2027cis_ftp_client: false
+amzn2027cis_openldap_clients_required: false
+amzn2027cis_telnet_required: false
+amzn2027cis_tftp_client: false
+
+# Section 3
+## Section 3 vars
+## Sysctl
+# Service configuration
+# Options are
+# Service
+# - false - removes package
+# - true - leaves package installed
+# Mask
+# - false - leaves service in current status
+# - true - sets service name to masked
+#
+# Setting both Service and Mask to false will remove the package if exists
+#
+amzn2027cis_bluetooth_service: false
+amzn2027cis_bluetooth_mask: false
+
+## IPv6 required
+amzn2027cis_ipv6_required: true
+
+# amzn2027cis_ipv6_disable defines the method of disabling IPv6, sysctl vs kernel
+amzn2027cis_ipv6_disable_method: sysctl
+
+## 3.3.1.1-3.3.1.5, 3.3.2.2-3.3.2.3 forwarding and send_redirects (host only OR host and router)
+amzn2027cis_is_router: false
+
+## Section 4
+### Firewall
+amzn2027cis_firewall: firewalld
+
+# Section 4
+
+
+# Section 5
+
+amzn2027cis_sshd_config_file: /etc/ssh/sshd_config
+
+## 5.1.8 Note the following to understand precedence and layout, comma separated
+amzn2027cis_sshd_allowusers: ''
+amzn2027cis_sshd_allowgroups:
+amzn2027cis_sshd_denyusers: nobody
+amzn2027cis_sshd_denygroups:
+
+## 5.2.12 set sugroup if differs from wheel
+amzn2027cis_sugroup: sugroup
+
+## 5.3.2.1 Enable automation to create custom profile settings, using the settings above
+amzn2027cis_authselect_custom_profile_create: true
+
+## 5.3.2.1 Enable automation to select custom profile options, using the settings above
+amzn2027cis_authselect_custom_profile_select: false
+
+## 5.3.2.1 Authselect select false if using AD or RHEL ID mgmt
+amzn2027cis_authselect_custom_profile_name: cis_example_profile
+
+## 5.3.3.2.3 Set option used for password complexity
+# either minclass or credits - enabling to check for one option in settings
+amzn2027cis_passwd_complex_option: minclass
+
+## 5.4.1.x login.defs password settings
+amzn2027cis_pass_max_days: "365"
+amzn2027cis_pass_min_days: "7"
+amzn2027cis_pass_warn_age: "7"
+
+# Section 6
+
+# Control 6.1.x
+
+# aide setup via - cron, timer
+amzn2027cis_aide_scan: timer
+
+## Logging 6.2.x.x
+
+## syslog
+## change to rsyslog/ journald or other
+
+# Control 6.2.3.x
+## Set if host is a logserver
+amzn2027cis_remote_log_server: false
+
+# Log server settings
+amzn2027cis_system_is_log_server: false
+amzn2027cis_remote_log_host: logagg.example.com
+amzn2027cis_remote_log_port: 514
+amzn2027cis_remote_log_protocol: tcp
+amzn2027cis_remote_log_retrycount: 100
+amzn2027cis_remote_log_queuesize: 1000
+amzn2027cis_remote_log_tls: false
+amzn2027cis_remote_log_tls_cafile: /etc/pki/tls/certs/ca-bundle.crt
+amzn2027cis_remote_log_tls_keyfile: ''
+
+# Control 7.1.12
+amzn2027cis_exclude_unowned_search_path: \( ! -path "/run/user/*" -a ! -path "/proc/*" -a ! -path "*/containerd/*" -a ! -path "*/kubelet/pods/*" -a ! -path "*/kubelet/plugins/*" -a ! -path "/sys/fs/cgroup/memory/*" -a ! -path "/var/*/private/*" \)

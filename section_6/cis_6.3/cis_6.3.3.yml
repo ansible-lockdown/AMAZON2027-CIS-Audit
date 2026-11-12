@@ -1,0 +1,30 @@
+---
+
+{{ if .Vars.amzn2027cis_level_1 }}
+  {{ if .Vars.amzn2027cis_rule_6_3_3 }}
+command:
+  audit_bins_crypto_aide:
+    title: 6.3.3 | Ensure cryptographic mechanisms are used to protect the integrity of audit tools
+    exec: grep -E '^\s*/usr/bin/au' /etc/aide.conf
+    exit-status: 0
+    stdout:
+      - '/^\s*/usr/bin/auditctl p\+i\+n\+u\+g\+s\+b\+acl\+xattrs\+sha512\s*$/'
+      - '/^\s*/usr/bin/auditd p\+i\+n\+u\+g\+s\+b\+acl\+xattrs\+sha512\s*$/'
+      - '/^\s*/usr/bin/ausearch p\+i\+n\+u\+g\+s\+b\+acl\+xattrs\+sha512\s*$/'
+      - '/^\s*/usr/bin/aureport p\+i\+n\+u\+g\+s\+b\+acl\+xattrs\+sha512\s*$/'
+      - '/^\s*/usr/bin/augenrules p\+i\+n\+u\+g\+s\+b\+acl\+xattrs\+sha512\s*$/'
+    skip: {{ not .Vars.amzn2027cis_config_aide }}
+    skip-reason: AIDE is not managed (amzn2027cis_config_aide is false)
+    meta:
+      server: 1
+      workstation: NA
+      CIS_ID:
+      - 6.3.3
+      CISv8:
+      - 3.14
+      CISv8_IG1: false
+      CISv8_IG2: false
+      CISv8_IG3: true
+      NIST800-53R5: SI-7
+  {{ end }}
+{{ end }}

@@ -1,0 +1,37 @@
+---
+
+{{ if .Vars.amzn2027cis_level_2 }}
+  {{ if .Vars.amzn2027cis_rule_4_1_9 }}
+service:
+  cis_4_1_9_nftables_service:
+    title: 4.1.9 | Ensure conflicting firewall utilities are not in use with firewalld | nftables.service
+    name: nftables
+    enabled: false
+    running: false
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID:
+      - 4.1.9
+      NIST800-53R5: CA-9
+package:
+  iptables-services:
+    title: 4.1.9 | Ensure conflicting firewall utilities are not in use with firewalld | iptables-services
+    installed: false
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID:
+      - 4.1.9
+      NIST800-53R5: CA-9
+  ufw:
+    title: 4.1.9 | Ensure conflicting firewall utilities are not in use with firewalld | ufw
+    installed: false
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID:
+      - 4.1.9
+      NIST800-53R5: CA-9
+  {{ end }}
+{{ end }}

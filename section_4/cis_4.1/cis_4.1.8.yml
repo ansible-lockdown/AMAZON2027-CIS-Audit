@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.amzn2027cis_level_2 }}
+  {{ if .Vars.amzn2027cis_rule_4_1_8 }}
+command:
+  cis_4_1_8_default_zone_drop:
+    title: 4.1.8 | Ensure firewalld default zone is set to drop
+    exec: firewall-cmd --get-default-zone
+    exit-status: 0
+    stdout:
+    - '/^drop$/'
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID:
+      - 4.1.8
+      NIST800-53R5: CA-9
+  {{ end }}
+{{ end }}

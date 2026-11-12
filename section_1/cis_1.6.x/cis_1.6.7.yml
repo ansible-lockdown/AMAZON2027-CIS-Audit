@@ -1,0 +1,30 @@
+---
+
+{{ if .Vars.amzn2027cis_level_2 }}
+  {{ if .Vars.amzn2027cis_rule_1_6_7 }}
+command:
+  crypto_policies_pq:
+    title: 1.6.7 | Ensure system wide crypto policy enables post-quantum algorithms
+    exec: |
+      echo "policy:$(cat /etc/crypto-policies/config 2>/dev/null | xargs)"
+      echo "ssh_mlkem_kex:$(grep -Pic -- '^\h*KexAlgorithms\h+\S*mlkem' /etc/crypto-policies/back-ends/openssh.config 2>/dev/null || true)"
+    exit-status: 0
+    stdout:
+    - '/^policy:\S+$/'
+    - '!/^policy:.*:NO-PQ(:|$)/'
+    - '/^ssh_mlkem_kex:[1-9][0-9]*$/'
+    skip: {{ not .Vars.amzn2027cis_crypto_policy_ansiblemanaged }}
+    skip-reason: the crypto policy is not managed, amzn2027cis_crypto_policy_ansiblemanaged is false
+    meta:
+      server: 2
+      workstation: NA
+      CIS_ID:
+      - 1.6.7
+      CISv8:
+      - 3.10
+      CISv8_IG1: false
+      CISv8_IG2: true
+      CISv8_IG3: true
+      NIST800-53R5: SC-13
+  {{ end }}
+{{ end }}
